@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List(networkManager.posts) { post in
-                NavigationLink(destination: Text(post.url).padding()) {
+                NavigationLink(destination: DetailView(url: post.url)) {
                     Text("\(post.points)").font(.caption)
                     Text(post.title)
                 }
@@ -26,13 +26,6 @@ struct ContentView: View {
         }
     }
 }
-//
-//let posts = [
-//    Post(id: "1", title: "Hello"),
-//    Post(id: "2", title: "Bonjor"),
-//    Post(id: "3", title: "Buna"),
-//    Post(id: "4", title: "Hola"),
-//]
 
 #Preview {
     ContentView()
